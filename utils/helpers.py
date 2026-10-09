@@ -1,3 +1,4 @@
+# Completa los campos de usuario y contraseña e inicia sesión.
 def iniciar_sesion(driver):
     usuario = driver.find_element("id", "user-name")
     usuario.send_keys("standard_user")

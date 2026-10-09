@@ -1,6 +1,7 @@
 from selenium import webdriver
 from utils.helpers import iniciar_sesion
 
+# Verifica que el usuario pueda iniciar sesión y acceder al catálogo.
 def test_login():
     driver = webdriver.Chrome()
 
@@ -11,6 +12,7 @@ def test_login():
     assert driver.current_url == "https://www.saucedemo.com/inventory.html"
     assert driver.title == "Swag Labs"
 
+# Verifica que el catálogo muestre un producto, el menú y el filtro de ordenamiento.
 def test_catalogo():
     driver = webdriver.Chrome()
 
@@ -27,6 +29,7 @@ def test_catalogo():
     filtro = driver.find_element("class name", "product_sort_container")
     assert filtro.is_displayed()
 
+# Verifica que se pueda agregar un producto al carrito y que aparezca en él.
 def test_carrito():
     driver = webdriver.Chrome()
 
